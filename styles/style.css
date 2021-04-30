@@ -37,16 +37,14 @@
     background-position: 18% 26%;
     background-size: 10%;   
 }
-.slide1 {
+.slide {
     display:flex;
     position:relative;
     flex-direction: column;
     margin: auto;
     z-index: 3;
 }
-#slider .slide1.selected {
-    display: none;
-}
+
 
 .texto {
     font-size: 32px;
@@ -70,12 +68,7 @@
     top: 0.2em;
     z-index: 2;
 }
-#slider .imagem.selected {
-    display: none;
-}
-.slide2 {
-    display: none;
-}
+
 
 .foto {
     width: 100%;
@@ -83,26 +76,28 @@
     border-radius: 2%;   
 }
 
-.botoes {
-    display: flex;
-    position: absolute;
-    z-index: 3;
-    background-color: whitesmoke;
-    width: 26%;
-    height: 3em;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 10em;
-    top: 95%;
-    right: 68%;
-    box-shadow: 0px 1px 1px rgb(255, 255, 255);
-   
+.prev {
+    padding: 1rem 2rem 1rem 1rem;
+    cursor: pointer;
+    border-radius: 20px 0 0 20px;
+    background-color: #FFF;
+    position: relative;
+    bottom: 30px;
+    left: 70px;
+    border: none;
+    outline: none;
 }
 
-button {
-    width: 26%;
-    height: 3em;
-    justify-content: space-around;
+.next {
+    padding: 1rem 1rem 1rem 2rem;
+    cursor: pointer;
+    border-radius: 0 20px 20px 0;
+    background-color: #FFF;
+    position: relative;
+    bottom: 30px;
+    left: 50px;
+    border: none;
+    outline: none;
 }
 
 .attribution {
@@ -110,6 +105,8 @@ button {
     bottom: 0;
     font-size: 10px;
 }
+/* Media Query */
+
 @media (max-width:1156px){
     .texto {
         font-size: 26px;
@@ -185,4 +182,85 @@ button {
         display: none;
     }
 
+}
+
+@media only screen and (max-width: 600px) {
+    .conteudo {
+        display: flex;
+        width: auto;
+        height: 100%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-image: url(/coding-bootcamp-testimonials-slider-master/images/pattern-curve.svg);
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        
+    }
+    #slider{
+        width: 90%;
+        padding: 5% 1%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-position: 155px 360px, 20px  60px;
+        background-size: 20%, 90%;
+    }
+
+    .slide {
+        flex: 1;
+        position: static;
+    }
+    
+    .imagem {
+        flex: 1;
+        padding-bottom: 6rem;
+    }
+    
+    .texto {
+        font-size: 97%;
+        font-weight: lighter;
+    }
+
+    .slide{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .prev {
+        padding: 1rem 2rem 1rem 1rem;
+        cursor: pointer;
+        border-radius: 20px 0 0 20px;
+        background-color: #FFF;
+        position: relative;
+        bottom: 30px;
+        left: 10px;
+        border: none;
+    }
+    
+    .next {
+        padding: 1rem 1rem 1rem 2rem;
+        cursor: pointer;
+        border-radius: 0 20px 20px 0;
+        background-color: #FFF;
+        position: relative;
+        bottom: 30px;
+        left: -10px;
+        border: none;
+    }
+
+    .sub-texto {
+        font-size: 15px;
+        font-weight: bolder;
+        margin-right: 1rem;
+    }
+    
+    .client-occupation {
+        opacity: 0.8;
+        font-size: 15px;
+        font-weight: lighter;
+        margin-right: 1rem;
+    }
 }
